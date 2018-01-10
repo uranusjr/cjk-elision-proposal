@@ -2,22 +2,81 @@
 
 \documentclass[a4paper, 12pt]{article}
 
+\usepackage[superscript]{cite}
 \usepackage{datetime2}
+\usepackage{hyperref}
+\usepackage{xeCJK}
+
+\setCJKmainfont{Source Han Sans TC Light}
+\setCJKmonofont{Source Han Sans TC Light}
 
 \begin{document}
 
-\title{Proposal to Include Dedicated Elision Character for CJK Scripts}
+\title{Proposal of Elipsis Punctuation for CJK Scripts\footnote{Latest: \scriptsize \url{https://github.com/uranusjr/cjk-elision-proposal/blob/master/proposal.pdf}}}
 \date{\today}
 
-\author{Tzu-ping Chung\thanks{Corresponding author, \texttt{uranusjr@gmail.com}.}}
+\author{Tzu-ping Chung\footnote{Corresponding author, \texttt{uranusjr@gmail.com}.}}
 
 \maketitle
 
 \abstract{CJK languages expect a different style of ellipses from Romanic languages. In most languages, the accepted form is either three or six dots vertically centred. Current inclusion of ellipsis punctuation in Unicode is shared with Romance languages, which creates significant difficulty for a document author when multiple languages need to be mixed in a text body. CJK font designers also face a dilemma: The font must choose one of the two styles, neither perfect. A new character is proposed to distinguish between the two different ellipsis styles, thus resolve this problem.}
 
 
-\chapter{Introduction}
+\section{Introduction}
 
-The usage of ellipsis in CJK languages is large borrowed from Romanic languages, to show 
+The usage of ellipsis in CJK languages is large borrowed from Romanic languages, to indicate omission of text, stuttering in speech, and implied censoring, etc. Due to the difference of writing systems, however, educational governing bodies encourage a different style from Romanic languages. The most common convention is to put three dots in vertically centre (between the baseline and the ascent line). \cite{roc-punc}\cite{prc-punc}
+
+Representation of this character differs between fonts. TODO: List different implementations.
+
+
+\section{Difficulties in Practice}
+
+TODO: Simple write-up on how the current situation causes difficulties in multi-language documents, no matter how the author prioritise fonts.
+
+
+\section{Discussions}
+
+Discuss the presence of U+22EF.
+
+
+\section{Proposed Solutions}
+
+Two solutions are hereby proposed to resolve the aforementioned problems. The solutions are mutually exclusive, and the author expects only one of them to be accepted.
+
+
+\subsection{Dedicated Character}
+
+\subsubsection{CLDR Short Name}
+
+\subsubsection{CLDR Keywords}
+
+\subsubsection{Images}
+
+% TODO: Make this image.
+% \includegraphics{dots.png}
+
+\subsubsection{Sort Location}
+
+\subsection{Usage Expansion of Existing Character}
+
+Maybe we can reuse U+22EF, but that requires some clarification.
+
+
+\section{License}
+
+All text, iamges, and other formats included in this proposal were created by the author. I hereby declare that the Unicode Consortium and its members are granted the right to use, edit and redistribute these contents in any way they want without restriction. Copies of the sample images and font are available at \url{https://github.com/uranusjr/cjk-elision-proposal}.
+
+\begin{thebibliography}{9}
+
+\bibitem{roc-punc}
+The National Languages Committee, Ministry Education, Republic of China, \textit{Renewed Booklet for Punctuations, Revised}, page 13. December 2008. 教育部國語推行委員會編著《重訂標點符號手冊》修訂版。中華民國 97 年 12 月。\,\url{http://language.moe.gov.tw/001/Upload/FILES/SITE_CONTENT/M0001/HAU/Revised_Handbook_of_Punctuation.pdf}
+
+\bibitem{prc-punc}
+National Standards of the People's Republic of China, \textit{General Rules for Punctuation}, page 9. 中华人民共和国国家标准标点符号用法。GB/T 15834-2011 \,\url{http://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf}
+
+\bibitem{discussion}
+\url{https://github.com/sparanoid/chinese-copywriting-guidelines/issues/58}
+
+\end{thebibliography}
 
 \end{document}
